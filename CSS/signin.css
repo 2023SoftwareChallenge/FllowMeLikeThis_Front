@@ -5,7 +5,7 @@
 
 main {
     width: 100%;
-    height: calc(100vh - 65px);
+    height: calc(100vh - 50px);
     background-color: #EBE9FA;
     display: flex;
     justify-content: center;
