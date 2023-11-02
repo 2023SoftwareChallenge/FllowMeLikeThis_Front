@@ -18,7 +18,7 @@ submitBtn.onclick = () => {
             user_name: name
         }
 
-        axios.post('http://localhost:3000/user', userData)
+        axios.post('http://10.96.122.71:3000/user', userData)
             .then(response => {
                 console.log('Registration successful:', response.data);
                 window.location.href = 'signin.html';
