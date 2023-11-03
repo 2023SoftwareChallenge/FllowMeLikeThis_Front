@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
         //아이디 유효성 검사
-        let reg_id = /^(?=.*[a-z])(?=.*\d)[a-z0-9_-]{6,20}$/;
+        let reg_id = /(?=.*[a-zA-Z])(?=.*\d){6,20}/;
         if(!reg_id.test(idInput.value)){
             idInput.style.outline ="1px solid #FF3B30";
             idLabel.style.color = "#FF3B30"
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (passwordInput.placeholder === "") {
             passwordInput.placeholder = "비밀번호";
 
-            let reg_pw = /(?=.*[a-zA-ZS])(?=.*?[#?!@$%^&*-]).{8,20}/
+            let reg_pw = /(?=.*\d)(?=.*[a-zA-Z])(?=.*?[#?!@$%^&*-]).{8,20}/
             if(!reg_pw.test(passwordInput.value)){
                 passwordInput.style.outline ="1px solid #FF3B30";
                 pwLabel.style.color = "#FF3B30";
