@@ -76,14 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (passwordInput.value !== passwordCheckInput.value) {
-            passwordCheckInput.style.outline = "1px solid #34C759";
-            checkLabel.style.color = "#34C759";
+            passwordCheckInput.style.outline = "1px solid #FF3B30";
+            checkLabel.style.color = "#FF3B30";
             checkLabel.textContent = "일치하지 않습니다"
             sharedData.checkArr[2] = false;
         }
         else {
             passwordCheckInput.style.outline = "1px solid #34C759";
-            pwLabel.style.color = "#34C759";
             checkLabel.textContent = ""
             sharedData.checkArr[2] = true;
         }
