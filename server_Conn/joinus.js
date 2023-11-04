@@ -10,7 +10,9 @@ submitBtn.onclick = () => {
     let pwCheck = checkField.value;
     let name = nameField.value;
 
-    if (pw === pwCheck) {
+    console.log(sharedData.checkArr)
+    console.log(sharedData.checkArr.includes(0))
+    if (pw === pwCheck && !sharedData.checkArr.includes(false)) {
 
         let userData = {
             user_id: id,
@@ -18,10 +20,10 @@ submitBtn.onclick = () => {
             user_name: name
         }
 
-        axios.post('http://10.96.122.71:3000/user', userData)
+        axios.post('http://localhost:3000/user', userData)
             .then(response => {
                 console.log('Registration successful:', response.data);
-                window.location.href = 'signin.html';
+                // window.location.href = 'signin.html';
             })
             .catch(error => {
                 if(error.response.status === 404){
@@ -31,6 +33,10 @@ submitBtn.onclick = () => {
                     console.error('Registration failed:', error.response.data);
                 }
             })
+    }
+
+    else {
+        alert('뺄래릭')
     }
 
 }
