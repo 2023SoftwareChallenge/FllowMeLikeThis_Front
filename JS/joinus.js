@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const nameInput = document.getElementById("name");
     const idLabel = document.getElementById("inputLabel");
     const pwLabel = document.getElementById("pwLabel");
-    let check = true;
-
+    const checkLabel = document.getElementById("checkLabel");
+    
     idInput.addEventListener("click", function () {
         if (idInput.value === "아이디") {
             idInput.value = "";
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 passwordInput.style.outline = "1px solid #34C759";
                 pwLabel.style.color = "#34C759"
                 if (check === false) {
+                    checkLabel.textContent="일치하지 않습니다"
                     check = true;
                 }
             }
@@ -70,6 +71,18 @@ document.addEventListener("DOMContentLoaded", function () {
     passwordCheckInput.addEventListener("blur", function () {
         if (passwordCheckInput.placeholder === "") {
             passwordCheckInput.placeholder = "비밀번호 확인";
+
+        }
+
+        if(passwordInput.value !== passwordCheckInput.value){
+            passwordCheckInput.style.outline = "1px solid #34C759";
+            checkLabel.style.color = "#34C759";
+            checkLabel.textContent="일치하지 않습니다"
+        }
+        else {
+            passwordCheckInput.style.outline = "1px solid #34C759";
+            pwLabel.style.color = "#34C759";
+            checkLabel.textContent=""
         }
     });
 
