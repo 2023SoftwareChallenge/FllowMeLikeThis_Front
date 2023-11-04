@@ -6,7 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const idLabel = document.getElementById("inputLabel");
     const pwLabel = document.getElementById("pwLabel");
     const checkLabel = document.getElementById("checkLabel");
-    
+
+    sharedData = {
+        checkArr : [false, false, false]
+    };
+
+    let checkArr = [false, false, false];
+
     idInput.addEventListener("click", function () {
         if (idInput.value === "아이디") {
             idInput.value = "";
@@ -23,15 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!reg_id.test(idInput.value)) {
             idInput.style.outline = "1px solid #FF3B30";
             idLabel.style.color = "#FF3B30"
-            let check = false;
+            sharedData.checkArr[0] = false;
         }
 
         else {
             idInput.style.outline = "1px solid #34C759";
             idLabel.style.color = "#34C759"
-            if (check === false) {
-                check = true;
-            }
+            sharedData.checkArr[0] = true;
         }
     });
 
@@ -49,15 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!reg_pw.test(passwordInput.value)) {
                 passwordInput.style.outline = "1px solid #FF3B30";
                 pwLabel.style.color = "#FF3B30";
-                let check = false;
+                sharedData.checkArr[1] = false;
             }
             else {
                 passwordInput.style.outline = "1px solid #34C759";
                 pwLabel.style.color = "#34C759"
-                if (check === false) {
-                    checkLabel.textContent="일치하지 않습니다"
-                    check = true;
-                }
+                sharedData.checkArr[1] = true;
             }
         }
     });
@@ -74,15 +75,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        if(passwordInput.value !== passwordCheckInput.value){
+        if (passwordInput.value !== passwordCheckInput.value) {
             passwordCheckInput.style.outline = "1px solid #34C759";
             checkLabel.style.color = "#34C759";
-            checkLabel.textContent="일치하지 않습니다"
+            checkLabel.textContent = "일치하지 않습니다"
+            sharedData.checkArr[2] = false;
         }
         else {
             passwordCheckInput.style.outline = "1px solid #34C759";
             pwLabel.style.color = "#34C759";
-            checkLabel.textContent=""
+            checkLabel.textContent = ""
+            sharedData.checkArr[2] = true;
         }
     });
 
