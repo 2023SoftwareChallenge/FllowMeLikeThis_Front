@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 50px);
+    background-color: #EBE9FA;
+}
+
+b > a {
+    color: #000;
+}
+
+#container {
+    width: 85%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #fff;
+    justify-content: space-between;
+}
+
+#calendar {
+    flex: 9;
+    height: 489px;
+    padding: 70px;
+    margin: 70px 100px;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0px 4px 30px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title.flex-container {
+    display: flex;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.weekday.container {
+    display: grid;
+    color: #828282;
+    font-size: 1.5rem;
+    text-align: center;   
+    border-radius: 10px;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.dates.container {
+    display: grid;
+    font-size: 1.25rem;
+    text-align: center;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.date.item {
+    display: grid;
+    aspect-ratio: 1/1;
+    place-items: center;
+}
+
+.left,
+.right,
+.month {
+    cursor: pointer;
+}
+
+#line {
+    height: 80%;
+    border-right: 5px solid #D9D9D9;
+}
+
+#score {
+    flex: 3;
+    height: 76%;
+    margin: 0 80px;
+}
+
+#score-box {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    line-height: 60px;
+    padding-left: 20px;
+    border-radius: 20px;
+    border: 0.5px solid #BFBFBF;
+}
