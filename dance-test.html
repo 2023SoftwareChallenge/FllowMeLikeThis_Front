@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/nav.css">
-    <link rel="stylesheet" href="CSS/dance.css">
+    <link rel="stylesheet" href="CSS/dance-test.css">
 </head>
 <body>
     <nav>
@@ -24,21 +24,17 @@
         </div>
     </nav>
     <main>
-        <div id="container">
-            <h1 id="title">플레이 할 노래를 선택하세요</h1>
-            <div id="dance-container">
-                <div id="dance1" onclick="redirectToDanceTest('I AM')">
-                    <p id="dance1-title">I AM</p>
-                </div>
-                <div id="dance2" onclick="redirectToDanceTest('Supery Shy')">
-                    <p id="dance2-title">Super Shy</p>
-                </div>
-                <div id="dance3" onclick="redirectToDanceTest('파이팅 해야지')">
-                    <p id="dance3-title">파이팅 해야지</p>
-                </div>
+        <div id="container-box">
+            <div id="container1">
+                <div id="dance-img"></div>
+                <p id="dance-name"></p>
+                <div id="underline"></div>
+                <p id="dance-score"></p>
+            </div>
+            <div id="container2">
             </div>
         </div>
     </main>
-    <script src="./JS/dance.js"></script>
+    <script src="./JS/dance-test.js"></script>
 </body>
 </html>
