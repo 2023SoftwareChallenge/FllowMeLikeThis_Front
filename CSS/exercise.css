@@ -1,5 +1,8 @@
 main {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: calc(100vh - 50px);
     background-color: #EBE9FA;
 }
@@ -8,37 +11,31 @@ b > a {
     color: #000;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #container {
     width: 85%;
     height: 90%;
-    background-color: #fff;
     border-radius: 30px;
+    background-color: #fff;
 }
 
 #title {
     color: #6D4BDF;
     font-size: 2.5rem;
     text-align: center;
-    margin: 100px 0 70px 0;
     font-weight: bolder;
+    margin: 100px 0 70px 0;
 }
 
 #exercise-container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .exercise-item {
-    text-align: center;
     width: 320px;
-    margin: 10px; 
+    margin: 0 20px; 
+    text-align: center;
 }
 
 .exercise-item img {
@@ -47,22 +44,12 @@ main {
     border-radius: 50%;
 }
 
-.exercise-item p {
-    color: #4F4F4F;
-    font-size: 1.5rem;
-    margin-top: 10px;
+.exercise-item img:hover {
+    border: 8px solid #00f;
 }
 
-#container > button {
-    width: 262px;
-    height: 80px;
-    color: #757575;
-    font-size: 2rem;
-    border-radius: 50px;
-    border: 1px solid #757575;
-    background-color: #EEEEEE;
-    opacity: 70%;
-    float: right;
-    margin-right: 50px;
-    margin-top: 35px;
+.exercise-item p {
+    margin-top: 10px;
+    color: #4F4F4F;
+    font-size: 1.5rem;
 }
