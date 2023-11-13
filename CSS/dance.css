@@ -1,5 +1,8 @@
 main {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: calc(100vh - 50px);
     background-color: #EBE9FA;
 }
@@ -8,31 +11,25 @@ b > a {
     color: #000;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #container {
     width: 85%;
     height: 90%;
-    background-color: #fff;
     border-radius: 30px;
+    background-color: #fff;
 }
 
 #title {
     color: #6D4BDF;
     font-size: 2.5rem;
     text-align: center;
-    margin: 100px 0 70px 0;
     font-weight: bolder;
+    margin: 100px 0 70px 0;
 }
 
 #dance-container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 #dance1,
@@ -40,45 +37,35 @@ main {
 #dance3 {
     width: 320px;
     height: 320px;
-    background-color: #6D4BDF;
     margin: 0 20px;
     border-radius: 200px;
 }
+#dance1:hover,
+#dance2:hover,
+#dance3:hover {
+    border: 8px solid #00f;
+}
 
 #dance1 {
-    background-image: url("../img/dance1.png");
     background-size: cover;
+    background-image: url("../img/dance1.png");
 }
 
 #dance2 {
-    background-image: url("../img/dance2.png");
     background-size: cover;
+    background-image: url("../img/dance2.png");
 }
 
 #dance3 {
-    background-image: url("../img/dance3.png");
     background-size: cover;
+    background-image: url("../img/dance3.png");
 }
 
-#dance1 p,
-#dance2 p,
-#dance3 p {
+#dance1-title,
+#dance2-title,
+#dance3-title {
     color: #4F4F4F;
     font-size: 1.5rem;
     margin-top: 360px;
     text-align: center;
-}
-
-#container > button {
-    width: 262px;
-    height: 80px;
-    color: #757575;
-    font-size: 2rem;
-    border-radius: 50px;
-    border: 1px solid #757575;
-    background-color: #EEEEEE;
-    opacity: 70%;
-    float: right;
-    margin-right: 50px;
-    margin-top: 100px;
 }
