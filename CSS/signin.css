@@ -30,11 +30,13 @@ main {
 }
 
 #login-container input {
-    color: #828282;
+    color: #676767;
+    outline : 0.3px solid #717171;
+    border: none;
 }
 
 #login-container input[type="password"]::placeholder {
-    color: #828282;
+    color: #676767;
 }
 
 #login-container h1 {
