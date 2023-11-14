@@ -64,16 +64,41 @@ button {
 }
 
 #section2-box {
+    width: 100%;
     display: flex;
+    overflow-x: auto;
     align-items: center;
     justify-content: center;
-    margin: 0 10%;
 }
 
 .section2-box {
     width: 400px;
     height: 500px; 
-    margin: 0 20px;
+    display: flex;
+    color: #fff;
+    margin: 0 30px;
     background: #9486EF;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 20px 20px 20px 60px;
+}
+
+.section2-title {
+    width: 75px;
+    margin: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    border-bottom: 5px solid #fff;
+}
+
+.section2-subtitle {
+    margin: 30px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.section2-content {
+    margin: 30px;
+    font-size: 20px;
+    line-height: 30px;
 }
