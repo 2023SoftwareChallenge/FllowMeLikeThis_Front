@@ -50,6 +50,7 @@ main {
     height: 50px;
     font-size: 1.25rem;
     margin-top: 15px;
+    margin-left: 20px;
     background-color: #6D4BDF;
     color: #fff;
     border: none;
@@ -60,6 +61,11 @@ main {
     right: 10px;
     transform: translateY(-50%);
     pointer-events: none;
+<<<<<<< HEAD
+    color: #999;
+    padding-right: 25px;
+=======
     color: #676767;
+>>>>>>> f01cd14c24c06c15f8cc03901f842a7fb060f2cb
     font-size: 0.8rem;
 }
