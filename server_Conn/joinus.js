@@ -23,7 +23,7 @@ submitBtn.onclick = () => {
         axios.post('http://localhost:3001/user', userData)
             .then(response => {
                 console.log('Registration successful:', response.data);
-                localStorage.setItem("userId", userData.user_name)
+                localStorage.setItem("userId", userData.user_name);
                 window.location.href = 'signin.html';
             })
             .catch(error => {
