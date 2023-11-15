@@ -20,10 +20,11 @@ submitBtn.onclick = () => {
             user_name: name
         }
 
-        axios.post('http://localhost:3000/user', userData)
+        axios.post('http://localhost:3001/user', userData)
             .then(response => {
                 console.log('Registration successful:', response.data);
-                // window.location.href = 'signin.html';
+                localStorage.setItem("userId", userData.user_name);
+                window.location.href = 'signin.html';
             })
             .catch(error => {
                 if(error.response.status === 404){
