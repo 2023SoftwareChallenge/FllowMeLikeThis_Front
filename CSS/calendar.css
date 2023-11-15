@@ -40,7 +40,7 @@ b > a {
     display: flex;
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin: -20px 0 60px 0;
     justify-content: space-around;
 }
 
@@ -62,7 +62,7 @@ b > a {
 
 .date.item {
     display: grid;
-    aspect-ratio: 1/1;
+    aspect-ratio: 2.5/1.5;
     place-items: center;
 }
 
