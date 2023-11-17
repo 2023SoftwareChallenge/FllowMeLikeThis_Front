@@ -38,12 +38,13 @@ b > a {
     width: 320px;
     height: 320px;
     margin: 0 20px;
+    border: 8px solid #fff;
     border-radius: 200px;
 }
 #dance1:hover,
 #dance2:hover,
 #dance3:hover {
-    border: 8px solid #00f;
+    border-color: #00f;
 }
 
 #dance1 {

@@ -36,16 +36,18 @@ b > a {
     width: 320px;
     margin: 0 20px; 
     text-align: center;
+    
 }
 
 .exercise-item img {
     width: 100%;
     max-width: 100%;
     border-radius: 50%;
+    border: 8px solid #fff;
 }
 
 .exercise-item img:hover {
-    border: 8px solid #00f;
+    border-color: #00f;
 }
 
 .exercise-item p {
