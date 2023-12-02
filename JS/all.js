@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const buttonContainer = document.getElementById("nav-side-container");
     const parentContainer = document.getElementById('button-container');
-
+    
     if (localStorage.getItem("userId")) {
         buttonContainer.remove();
-
         const userNameContainer = document.createElement('div');
         userNameContainer.id = 'userNameContainer';
 
@@ -24,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         newLogoutContainer.style.fontSize = "1rem";
         newLogoutContainer.style.color = "#000000";
         newLogoutContainer.style.opacity = "0.5";
+        newLogoutContainer.style.cursor = "pointer";
 
         userNameContainer.appendChild(newLogoutContainer);
         document.body.appendChild(newLogoutContainer);
@@ -42,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         parentContainer.insertBefore(userNameContainer, parentContainer.firstChild);
 
+        newLogoutContainer.addEventListener("click", function(){
+            localStorage.removeItem("userId");
+            window.location.href="index.html"
+        })
 
     }
+
 });
