@@ -14,6 +14,8 @@ submitBtn.onclick = () => {
     axios.post('http://13.125.232.210:3001/login', userData)
     .then(response => {
         console.log('Registration successful:', response.data);
+        localStorage.setItem("userId", response.data.result[0].user_name);
+        console.log(response.data.result[0].user_name);
         window.location.href='index.html';
     })
     .catch(error => {
