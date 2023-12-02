@@ -31,10 +31,14 @@
                 <div id="underline"></div>
                 <p id="dance-score"></p>
             </div>
-            <div id="container2">
+            <div id="container2" onclick="init()" onload="init()">
+                <canvas id="canvas"></canvas>
+                <div id="label-container"></div>
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
     <script src="./JS/dance-test.js"></script>
 </body>
 </html>
