@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // URL 매개변수에서 값을 가져옵니다.
+    // 값 가져오기
     const params = new URLSearchParams(window.location.search);
     const danceTitle = params.get('danceTitle');
 
-    // dance-name 요소에 댄스 타이틀을 설정합니다.
+    // dance-name에 알맞은 이름 넣기
     const danceNameElement = document.getElementById('dance-name');
     if (danceNameElement) {
         danceNameElement.textContent = danceTitle || 'not found';
-    }
+    };
 });
 
 const URL = "./TeachableMachine-Module/";
@@ -16,6 +16,7 @@ let model, webcam, ctx, labelContainer, maxPredictions;
 async function init() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
+    const danceImg = document.getElementById('dance-img');
 
     // load the model and metadata
     // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
@@ -23,11 +24,16 @@ async function init() {
     model = await tmPose.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
 
+    danceImg.style.backgroundSize = '225%';
+    danceImg.style.backgroundPosition = '45% 100%';
+    danceImg.style.backgroundRepeat = 'no-repeat';
+    danceImg.style.backgroundImage = 'url("../img/I\ AM-test.png")';
+
     // Convenience function to setup a webcam
     const xsize = 1000;
-    const ysize = 700;
+    const ysize = 720;
     const flip = true; // whether to flip the webcam
-    webcam = new tmPose.Webcam(xsize, ysize, flip); // width, height, flip
+    webcam = new tmPose.Webcam(xsize, ysize, flip);
     await webcam.setup(); // request access to the webcam
     await webcam.play();
     window.requestAnimationFrame(loop);
