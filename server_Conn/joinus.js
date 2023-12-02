@@ -20,7 +20,7 @@ submitBtn.onclick = () => {
             user_name: name
         }
 
-        axios.post('http://localhost:3001/user', userData)
+        axios.post('http://13.125.232.210:3001:3001/user', userData)
             .then(response => {
                 console.log('Registration successful:', response.data);
                 localStorage.setItem("userId", userData.user_name);
