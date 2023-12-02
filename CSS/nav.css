@@ -57,7 +57,7 @@ a {
     align-items: center;
 }
 
-#button-container > a > button {
+#nav-side-container > a > button {
     width: 100px;
     height: 30px;
     background-color: #fff;
