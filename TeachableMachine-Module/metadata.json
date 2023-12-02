@@ -1,0 +1,1 @@
+{"tfjsVersion":"1.3.1","tmVersion":"0.8.6","packageVersion":"0.8.6","packageName":"@teachablemachine/pose","timeStamp":"2023-12-02T12:07:41.027Z","userMetadata":{},"modelName":"my-pose-model","labels":["박수","잠실의 빅보이"],"modelSettings":{"posenet":{"architecture":"MobileNetV1","outputStride":16,"inputResolution":257,"multiplier":0.75}}}
