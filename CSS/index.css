@@ -63,12 +63,24 @@ button {
     text-align: center;
 }
 
+
+#section2-container {
+    overflow-x: hidden;
+}
+
+
 #section2-box {
-    width: 100%;
     display: flex;
-    overflow-x: auto;
     align-items: center;
     justify-content: center;
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 50px;
+    justify-content: flex-start;
+}
+
+#section2-box::-webkit-scrollbar{
+    display: none;
 }
 
 .section2-box {
@@ -76,7 +88,8 @@ button {
     height: 500px; 
     display: flex;
     color: #fff;
-    margin: 0 30px;
+    margin-left: 15px;
+    margin-right: 15px;
     background: #9486EF;
     flex-direction: column;
     justify-content: center;
