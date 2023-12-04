@@ -62,8 +62,10 @@ b > a {
 
 .date.item {
     display: grid;
-    aspect-ratio: 1.4/1.6;
+    aspect-ratio: 1.5 / 1.5;
     place-items: center;
+    margin: 6px 2px;
+    border-radius: 100px;
 }
 
 .left,
