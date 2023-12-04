@@ -1,8 +1,12 @@
+let danceTitle;
+let currentIndex = 0;
+const imagePaths = ["../img/IAM-test.png", "../img/파이팅해야지.png"];
+
 document.addEventListener('DOMContentLoaded', function () {
     // 값 가져오기
     const params = new URLSearchParams(window.location.search);
-    const danceTitle = params.get('danceTitle');
-
+    danceTitle = params.get('danceTitle');
+    console.log(danceTitle)
     // dance-name에 알맞은 이름 넣기
     const danceNameElement = document.getElementById('dance-name');
     if (danceNameElement) {
@@ -27,7 +31,8 @@ async function init() {
     danceImg.style.backgroundSize = '225%';
     danceImg.style.backgroundPosition = '45% 100%';
     danceImg.style.backgroundRepeat = 'no-repeat';
-    danceImg.style.backgroundImage = 'url("../img/I\ AM-test.png")';
+
+    showNextImage(danceImg);
 
     // Convenience function to setup a webcam
     const xsize = 1000;
@@ -46,6 +51,24 @@ async function init() {
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
     }
+}
+document.getElementById('container2-text').addEventListener('click', function() {
+    var audio = document.getElementById('audio');
+    if(danceTitle === "I AM"){
+        audio.src = './audio/iam.mp3';
+    } else if(danceTitle === "Super Shy"){
+        audio.src = './audio/supeyshy.mp3';
+    } else {
+        audio.src = './audio/파이팅해야지.mp3';
+    }
+    audio.play();
+});
+
+
+function showNextImage(danceImg){    
+    danceImg.style.backgroundImage = `url("${imagePaths[currentIndex]}")`;
+    currentIndex = (currentIndex + 1) % imagePaths.length;
+    setTimeout(() => showNextImage(danceImg), 3000);
 }
 
 async function loop(timestamp) {
