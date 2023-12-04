@@ -52,7 +52,7 @@ document.getElementById('container2-text').addEventListener('click', function() 
     var audio = document.getElementById('audio');
     if(danceTitle === "I AM"){
         audio.src = './audio/iam.mp3';
-    } else if(danceTitle === "Supery Shy"){
+    } else if(danceTitle === "Super Shy"){
         audio.src = './audio/supeyshy.mp3';
     } else {
         audio.src = './audio/파이팅해야지.mp3';
