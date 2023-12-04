@@ -1,4 +1,7 @@
-let danceTitle
+let danceTitle;
+let currentIndex = 0;
+const imagePaths = ["../img/IAM-test.png", "../img/파이팅해야지.png"];
+
 document.addEventListener('DOMContentLoaded', function () {
     // 값 가져오기
     const params = new URLSearchParams(window.location.search);
@@ -28,7 +31,8 @@ async function init() {
     danceImg.style.backgroundSize = '225%';
     danceImg.style.backgroundPosition = '45% 100%';
     danceImg.style.backgroundRepeat = 'no-repeat';
-    danceImg.style.backgroundImage = 'url("../img/I\ AM-test.png")';
+
+    showNextImage(danceImg);
 
     // Convenience function to setup a webcam
     const xsize = 1000;
@@ -59,6 +63,13 @@ document.getElementById('container2-text').addEventListener('click', function() 
     }
     audio.play();
 });
+
+
+function showNextImage(danceImg){    
+    danceImg.style.backgroundImage = `url("${imagePaths[currentIndex]}")`;
+    currentIndex = (currentIndex + 1) % imagePaths.length;
+    setTimeout(() => showNextImage(danceImg), 3000);
+}
 
 async function loop(timestamp) {
     webcam.update(); // update the webcam frame
