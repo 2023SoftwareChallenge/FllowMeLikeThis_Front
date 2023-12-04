@@ -1,8 +1,9 @@
+let danceTitle
 document.addEventListener('DOMContentLoaded', function () {
     // 값 가져오기
     const params = new URLSearchParams(window.location.search);
-    const danceTitle = params.get('danceTitle');
-
+    danceTitle = params.get('danceTitle');
+    console.log(danceTitle)
     // dance-name에 알맞은 이름 넣기
     const danceNameElement = document.getElementById('dance-name');
     if (danceNameElement) {
@@ -47,6 +48,17 @@ async function init() {
         labelContainer.appendChild(document.createElement("div"));
     }
 }
+document.getElementById('container2-text').addEventListener('click', function() {
+    var audio = document.getElementById('audio');
+    if(danceTitle === "I AM"){
+        audio.src = './audio/iam.mp3';
+    } else if(danceTitle === "Supery Shy"){
+        audio.src = './audio/supeyshy.mp3';
+    } else {
+        audio.src = './audio/파이팅해야지.mp3';
+    }
+    audio.play();
+});
 
 async function loop(timestamp) {
     webcam.update(); // update the webcam frame
