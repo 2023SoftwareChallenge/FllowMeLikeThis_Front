@@ -2,6 +2,7 @@ let danceTitle;
 let currentIndex = 0;
 const imagePaths = ["../img/IAM-test.png", "../img/파이팅해야지.png"];
 let danceConditoin = document.getElementById('dance-score');
+let score = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
     // 값 가져오기
@@ -52,6 +53,8 @@ async function init() {
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
     }
+
+    danceResult();
 }
 document.getElementById('container2-text').addEventListener('click', function() {
     var audio = document.getElementById('audio');
@@ -65,6 +68,14 @@ document.getElementById('container2-text').addEventListener('click', function() 
     audio.play();
 });
 
+function danceResult() {
+    if (currentIndex === imagePaths.length - 1) {
+        setTimeout(() => {
+            window.location.href = 'dance-result.html'; // dance-result 페이지로 이동
+        }, 30000); // 30초 대기 후 이동
+        return;
+    }
+}
 
 function showNextImage(danceImg){    
     danceImg.style.backgroundImage = `url("${imagePaths[currentIndex]}")`;
@@ -93,27 +104,33 @@ async function predict() {
 
     if(currentIndex === 0){
         if(prediction[0].probability >= 0.7) {
-            danceConditoin.innerHTML = "춤 실력이 마이클잭슨 ㄷㄷ"
+            danceConditoin.innerHTML = "춤 실력이 마이클잭슨 ㄷㄷ";
+            score+=5;
         }
         else if(prediction[0].probability  >= 0.4){
             danceConditoin.innerHTML = "봐줄만은 해요"
+            score+=3;
         }
 
         else {
             danceConditoin.innerHTML = "심각한 몸치... 하자왕 등극"
+            score+=1;
         }
     }
 
     if(currentIndex === 1){
         if(prediction[1].probability >= 0.7) {
             danceConditoin.innerHTML = "춤 실력이 마이클잭슨 ㄷㄷ"
+            score+=5;
         }
         else if(prediction[1].probability >= 0.4){
             danceConditoin.innerHTML = "봐줄만은 해요"
+            score+=3;
         }
 
         else {
             danceConditoin.innerHTML = "심각한 몸치... 하자왕 등극"
+            score+=1;
         }
     }
     // finally draw the poses
