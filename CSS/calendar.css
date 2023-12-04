@@ -27,7 +27,7 @@ b > a {
 }
 
 #calendar {
-    flex: 9;
+    flex: 2;
     height: 489px;
     padding: 70px;
     margin: 70px 100px;
@@ -62,8 +62,10 @@ b > a {
 
 .date.item {
     display: grid;
-    aspect-ratio: 2.5/1.5;
+    aspect-ratio: 1.5 / 1.5;
     place-items: center;
+    margin: 6px 2px;
+    border-radius: 100px;
 }
 
 .left,
