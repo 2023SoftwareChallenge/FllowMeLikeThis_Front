@@ -151,16 +151,6 @@ function drawPose(pose) {
 
 function danceResult() {
     if (currentIndex === imagePaths.length - 1) {
-        setTimeout(() => {
-            // Redirect to dance-result.html with the score as a query parameter
-            window.location.href = `dance-result.html?score=${score}`;
-        }, 30000); // 30 seconds wait before redirecting
-        return;
-    }
-}
-
-function danceResult() {
-    if (currentIndex === imagePaths.length - 1) {
         // Save danceTitle to localStorage
         localStorage.setItem('danceName', danceTitle);
 
