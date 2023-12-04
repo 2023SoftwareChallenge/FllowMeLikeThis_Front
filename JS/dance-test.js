@@ -2,6 +2,7 @@ let danceTitle;
 let currentIndex = 0;
 const imagePaths = ["../img/IAM-test.png", "../img/파이팅해야지.png"];
 let danceConditoin = document.getElementById('dance-score');
+let score = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
     // 값 가져오기
@@ -93,27 +94,33 @@ async function predict() {
 
     if(currentIndex === 0){
         if(prediction[0].probability >= 0.7) {
-            danceConditoin.innerHTML = "춤 실력이 마이클잭슨 ㄷㄷ"
+            danceConditoin.innerHTML = "춤 실력이 마이클잭슨 ㄷㄷ";
+            score+=5;
         }
         else if(prediction[0].probability  >= 0.4){
             danceConditoin.innerHTML = "봐줄만은 해요"
+            score+=3;
         }
 
         else {
             danceConditoin.innerHTML = "심각한 몸치... 하자왕 등극"
+            score+=1;
         }
     }
 
     if(currentIndex === 1){
         if(prediction[1].probability >= 0.7) {
             danceConditoin.innerHTML = "춤 실력이 마이클잭슨 ㄷㄷ"
+            score+=5;
         }
         else if(prediction[1].probability >= 0.4){
             danceConditoin.innerHTML = "봐줄만은 해요"
+            score+=3;
         }
 
         else {
             danceConditoin.innerHTML = "심각한 몸치... 하자왕 등극"
+            score+=1;
         }
     }
     // finally draw the poses
