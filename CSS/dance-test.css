@@ -52,6 +52,13 @@ main {
     border-bottom: 7px solid #806EF6;
 }
 
+#dance-score {
+    font-size: 30px;
+    margin-top: 25px;
+    color: #6750FC;
+    font-weight: bold;
+}
+
 .dance-score-text {
     font-size: 40px;
     margin-top: 10px;
