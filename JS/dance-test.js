@@ -53,6 +53,8 @@ async function init() {
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
     }
+
+    danceResult();
 }
 document.getElementById('container2-text').addEventListener('click', function() {
     var audio = document.getElementById('audio');
@@ -66,6 +68,14 @@ document.getElementById('container2-text').addEventListener('click', function() 
     audio.play();
 });
 
+function danceResult() {
+    if (currentIndex === imagePaths.length - 1) {
+        setTimeout(() => {
+            window.location.href = 'dance-result.html'; // dance-result 페이지로 이동
+        }, 30000); // 30초 대기 후 이동
+        return;
+    }
+}
 
 function showNextImage(danceImg){    
     danceImg.style.backgroundImage = `url("${imagePaths[currentIndex]}")`;
