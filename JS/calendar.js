@@ -64,3 +64,10 @@ thismonthDiv.onclick = () => {
     month = now.getMonth()+1;
     setCalendar(year, month);
 }
+
+let danceName = localStorage.getItem("danceName");
+let score = localStorage.getItem("score");
+
+
+let danceNameField = document.getElementById("score-box");
+danceNameField.innerHTML = danceName+ " " + score+"점";

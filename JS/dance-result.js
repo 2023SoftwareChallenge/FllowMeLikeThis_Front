@@ -18,4 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Clear the danceName from localStorage to avoid using old values in subsequent visits
     localStorage.removeItem('danceName');
+
+    localStorage.setItem("danceName", resultTitleElement.textContent);
+    localStorage.setItem("score", score);
+
 });
